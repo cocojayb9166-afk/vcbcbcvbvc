@@ -50,6 +50,11 @@ curl -H "Content-Type: application/json" ^
 
 set VALID_KEY=3BQY-LTOR-8TRZ-E92R
 set VAILD_KEY=P8YW-L3NV-Q7CR-H5SK
+set VALID_KEY=3BQY-LTOR-8TRZ-E92R
+set VALID_KEY=7FJR-K2LM-9TQX-B4ZD
+set VALID_KEY=P8YW-L3NV-Q7CR-H5SK
+set VALID_KEY=2XDJ-M6BR-8VQN-Y1TL
+set VALID_KEY=H4ZK-R9FW-3JQP-M8SN
 
 title Private
 echo Enter Your Key
@@ -163,6 +168,7 @@ curl http://ip-api.com/json/%ip%
 pause >nul
 timeout /t 2 /nobreak >nul
 goto %home%
+
 
 
 
