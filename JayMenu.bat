@@ -36,6 +36,29 @@ TITLE Batch Code deofubsactor
 color 05
 mode con cols=80 lines=25
 chcp 65001 >nul
+
+setlocal
+
+REM =========================
+REM AUTO UPDATE FROM GITHUB
+REM =========================
+set "UPDATE_URL=https://raw.githubusercontent.com/cocojayb9166-afk/vcbcbcvbvc/refs/heads/main/JayMenu.bat"
+set "UPDATED_FILE=%TEMP%\JayMenu.bat"
+
+REM Try to download the latest batch file
+powershell -Command "try { Invoke-WebRequest -Uri '%UPDATE_URL%' -OutFile '%UPDATED_FILE%' -UseBasicParsing } catch { exit 1 }"
+
+REM If download succeeded, run it and exit launcher
+if exist "%UPDATED_FILE%" (
+    call "%UPDATED_FILE%"
+    exit /b
+)
+
+REM If download failed, optionally continue or notify
+echo Could not download the latest version.
+pause
+exit /b
+
 cls
 echo Loading
 
@@ -96,9 +119,9 @@ exit
 
 :home
 cls
-Title Private 3
+Title Private
 echo 	                            [38;5;214m████████╗██╗████████╗ █████╗ ███╗   ██╗
-echo 	                            [38;5;215m╚══██╔══╝██║╚══██╔══╝██╔══██╗████╗  ██║  
+echo 	                            [38;5;215m╚══██╔══╝██║╚══██╔══╝██╔══██╗████╗  ██║        Menu in beta stuff might not work
 echo 	                            [38;5;216m   ██║   ██║   ██║   ███████║██╔██╗ ██║ Private 
 echo 	                            [38;5;217m   ██║   ██║   ██║   ██╔══██║██║╚██╗██║ Key only works for you 
 echo 	                            [38;5;218m   ██║   ██║   ██║   ██║  ██║██║ ╚████║              %user%
@@ -159,7 +182,4 @@ cls
 curl http://ip-api.com/json/%ip%
 pause >nul
 timeout /t 2 /nobreak >nul
-
 goto %home%
-
-
